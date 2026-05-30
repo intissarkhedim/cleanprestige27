@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarifs · Clean Prestige</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --blue: #0f2d4a;
+  --blue-mid: #1a4a7a;
+  --blue-light: #e8f0f7;
+  --gold: #C9A84C;
+  --gold-light: #e8d5a0;
+  --white: #ffffff;
+  --gray-bg: #f7f8fa;
+  --gray-border: #e5e7eb;
+  --text: #1a1a1a;
+  --text-mid: #4a5568;
+  --text-light: #9ca3af;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4,.heading{font-family:'Outfit',sans-serif;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:var(--blue);
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo svg{width:28px;height:20px;}
+.nav-name{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:0.08em;}
+.nav-sub{font-family:'Inter',sans-serif;font-size:0.42rem;color:rgba(255,255,255,0.35);letter-spacing:0.35em;text-transform:uppercase;margin-top:1px;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{
+  font-family:'Inter',sans-serif;
+  font-size:0.6rem;font-weight:400;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.08em;
+  padding:8px 14px;
+  transition:color 0.2s;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--white);border-bottom-color:var(--gold);}
+.nav-cta{
+  background:var(--gold) !important;
+  color:var(--blue) !important;
+  font-weight:600 !important;
+  border-bottom:none !important;
+  padding:9px 20px !important;
+  border-radius:2px;
+}
+.nav-cta:hover{background:#d4b050 !important;}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--white);}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;
+  background:var(--blue);z-index:999;
+  padding:16px 5%;flex-direction:column;gap:2px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.mobile-menu a{
+  font-family:'Inter',sans-serif;
+  font-size:0.7rem;color:rgba(255,255,255,0.65);
+  letter-spacing:0.08em;
+  padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu.open{display:flex;}
+
+footer{background:var(--blue);padding:56px 5% 28px;}
+.footer-top{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;
+  padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.08);
+  margin-bottom:24px;
+}
+.footer-brand-name{font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);letter-spacing:0.06em;margin-bottom:6px;}
+.footer-brand-slogan{font-family:'Inter',sans-serif;font-size:0.58rem;color:rgba(255,255,255,0.35);margin-bottom:0;}
+.footer-col-title{font-family:'Inter',sans-serif;font-size:0.44rem;font-weight:600;color:var(--gold);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:14px;}
+.footer-col a{display:block;font-family:'Inter',sans-serif;font-size:0.6rem;color:rgba(255,255,255,0.45);margin-bottom:9px;}
+.footer-col a:hover{color:var(--white);}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.footer-contact-icon{color:var(--gold);font-size:0.8rem;flex-shrink:0;}
+.footer-contact-text{font-family:'Inter',sans-serif;font-size:0.58rem;color:rgba(255,255,255,0.45);line-height:1.5;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-family:'Inter',sans-serif;font-size:0.44rem;color:rgba(255,255,255,0.18);letter-spacing:0.06em;}
+.footer-gold-line{width:36px;height:1px;background:var(--gold);opacity:0.3;}
+
+.container{max-width:1180px;margin:0 auto;padding:0 5%;}
+.section-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.eyebrow-line{width:24px;height:1px;background:var(--gold);flex-shrink:0;}
+.eyebrow-text{font-family:'Inter',sans-serif;font-size:0.44rem;font-weight:600;color:var(--gold);letter-spacing:0.35em;text-transform:uppercase;}
+.section-title{font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:700;line-height:1.15;color:var(--blue);margin-bottom:16px;}
+.section-title em{color:var(--gold);font-style:normal;font-weight:800;}
+.section-lead{font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:300;color:var(--text-mid);line-height:1.8;max-width:540px;}
+.btn-primary{display:inline-block;background:var(--blue);color:var(--white);font-family:'Inter',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:13px 28px;transition:background 0.2s;border-radius:2px;}
+.btn-primary:hover{background:var(--blue-mid);}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--blue);font-family:'Inter',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:13px 28px;transition:background 0.2s;border-radius:2px;}
+.btn-gold:hover{background:#d4b050;}
+.btn-outline{display:inline-block;border:1.5px solid var(--blue);color:var(--blue);font-family:'Inter',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:12px 28px;transition:all 0.2s;border-radius:2px;}
+.btn-outline:hover{background:var(--blue);color:var(--white);}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+  .footer-top{grid-template-columns:1fr;}
+  .section-title{font-size:1.8rem;}
+}
+
+body{padding-top:68px;}
+
+.page-hero{background:var(--blue);padding:80px 0 56px;}
+.page-hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.page-hero-line{width:24px;height:1px;background:var(--gold);}
+.page-hero-label{font-family:'Inter',sans-serif;font-size:0.44rem;font-weight:600;color:var(--gold);letter-spacing:0.4em;text-transform:uppercase;}
+.page-hero-title{font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:800;color:var(--white);line-height:1.1;margin-bottom:12px;letter-spacing:-0.01em;}
+.page-hero-title em{color:var(--gold);font-style:normal;}
+.page-hero-sub{font-family:'Inter',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.5);line-height:1.8;max-width:500px;}
+.t-section{padding:72px 0;}
+.t-section.alt{background:var(--gray-bg);}
+.t-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-border);}
+.t-col{background:var(--white);}
+.t-col-head{background:var(--blue);padding:11px 16px;font-family:'Inter',sans-serif;font-size:0.44rem;font-weight:600;color:var(--gold);letter-spacing:0.3em;text-transform:uppercase;}
+.t-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--gray-border);}
+.t-row:last-child{border-bottom:none;}
+.t-row:nth-child(even){background:var(--gray-bg);}
+.t-label{font-family:'Inter',sans-serif;font-size:0.6rem;color:var(--text);}
+.t-price{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);white-space:nowrap;}
+.t-special{display:flex;justify-content:space-between;align-items:center;padding:18px 16px;background:var(--blue-light);border-bottom:1px solid var(--gray-border);}
+.t-special-label{font-family:'Outfit',sans-serif;font-size:0.65rem;font-weight:600;color:var(--blue);}
+.t-special-price{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;color:var(--blue);}
+.cta-s{padding:72px 0;background:var(--blue);}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cta-title{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;color:var(--white);}
+.cta-title em{color:var(--gold);font-style:normal;}
+@media(max-width:768px){
+  .page-hero-title{font-size:1.9rem;}
+  .t-grid2{grid-template-columns:1fr;}
+  .cta-inner{flex-direction:column;text-align:center;}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 28 20" fill="none">
+        <path d="M14 3C14 3 3 10 1 15L27 15C25 10 14 3 14 3Z" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <circle cx="14" cy="2.5" r="1.8" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <line x1="14" y1="0.7" x2="14" y2="0" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-name">CLEAN PRESTIGE</div>
+      <div class="nav-sub">Pressing · Évreux</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="">Accueil</a>
+    <a href="particuliers.html" class="">Particuliers</a>
+    <a href="entreprises.html" class="">Entreprises</a>
+    <a href="tarifs.html" class="active">Tarifs</a>
+    <a href="contact.html" class="">Contact</a>
+    <a href="tel:0227341370" class="nav-cta">02 27 34 13 70</a>
+  </div>
+  <div class="nav-burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Accueil</a>
+  <a href="particuliers.html">Particuliers</a>
+  <a href="entreprises.html">Entreprises</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:0227341370" style="color:var(--gold);">📞 02 27 34 13 70</a>
+</div>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow"><div class="page-hero-line"></div><div class="page-hero-label">Transparence</div></div>
+    <h1 class="page-hero-title">Nos <em>Tarifs</em></h1>
+    <p class="page-hero-sub">Tous nos tarifs sont affichés sans surprise. Contactez-nous pour un devis entreprise personnalisé.</p>
+  </div>
+</section>
+
+<section class="t-section">
+  <div class="container">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Nettoyage à l'eau ou à sec</div></div>
+    <h2 class="section-title" style="margin-bottom:32px;">Vêtements</h2>
+    <div class="t-grid2">
+      <div class="t-col">
+        <div class="t-col-head">Tailleur, Haut & Pull</div>
+        <div class="t-row"><span class="t-label">Tailleur 2 pièces</span><span class="t-price">16,90 €</span></div>
+        <div class="t-row"><span class="t-label">Tailleur 2 pièces (autre)</span><span class="t-price">19,90 €</span></div>
+        <div class="t-row"><span class="t-label">Veste de tailleur / Blazer</span><span class="t-price">9,90 €</span></div>
+        <div class="t-row"><span class="t-label">Chemise simple</span><span class="t-price">5,90 €</span></div>
+        <div class="t-row"><span class="t-label">Chemise satin / soie</span><span class="t-price">10,90 €</span></div>
+        <div class="t-row"><span class="t-label">Top</span><span class="t-price">4,90 €</span></div>
+        <div class="t-row"><span class="t-label">Tee-shirt / Polo</span><span class="t-price">4,90 €</span></div>
+        <div class="t-row"><span class="t-label">Pull</span><span class="t-price">7,90 €</span></div>
+        <div class="t-row"><span class="t-label">Gilet simple</span><span class="t-price">8,90 €</span></div>
+        <div class="t-row"><span class="t-label">Gilet autre ou long</span><span class="t-price">12,90 €</span></div>
+      </div>
+      <div class="t-col">
+        <div class="t-col-head">Bas, Robe, Manteau & Accessoires</div>
+        <div class="t-row"><span class="t-label">Pantalon</span><span class="t-price">7,90 €</span></div>
+        <div class="t-row"><span class="t-label">Bermuda / Short</span><span class="t-price">5,90 €</span></div>
+        <div class="t-row"><span class="t-label">Jupe simple</span><span class="t-price">8,90 €</span></div>
+        <div class="t-row"><span class="t-label">Jupe autre</span><span class="t-price">12,90 €</span></div>
+        <div class="t-row"><span class="t-label">Robe simple</span><span class="t-price">11,90 €</span></div>
+        <div class="t-row"><span class="t-label">Robe autre</span><span class="t-price">17,90 €</span></div>
+        <div class="t-row"><span class="t-label">Manteau</span><span class="t-price">18,90 €</span></div>
+        <div class="t-row"><span class="t-label">Doudoune</span><span class="t-price">24,90 €</span></div>
+        <div class="t-row"><span class="t-label">K-way</span><span class="t-price">13,90 €</span></div>
+        <div class="t-row"><span class="t-label">Blouson / Veste</span><span class="t-price">14,90 €</span></div>
+        <div class="t-row"><span class="t-label">Cravate</span><span class="t-price">5,90 €</span></div>
+        <div class="t-row"><span class="t-label">Foulard</span><span class="t-price">6,90 €</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="t-section alt">
+  <div class="container">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Repassage</div></div>
+    <h2 class="section-title" style="margin-bottom:32px;">Repassage</h2>
+    <div style="background:var(--white);">
+      <div class="t-special"><span class="t-special-label">Repassage au poids</span><span class="t-special-price">4,90 € / kg</span></div>
+      <div class="t-row"><span class="t-label">Chemise à l'unité</span><span class="t-price">3,90 €</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="t-section">
+  <div class="container">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Linge de maison</div></div>
+    <h2 class="section-title" style="margin-bottom:32px;">Blanchisserie</h2>
+    <div class="t-grid2">
+      <div class="t-col">
+        <div class="t-col-head">Literie</div>
+        <div class="t-row"><span class="t-label">Drap</span><span class="t-price">6,90 €</span></div>
+        <div class="t-row"><span class="t-label">Couette simple</span><span class="t-price">23,90 €</span></div>
+        <div class="t-row"><span class="t-label">Couette plume / duvet</span><span class="t-price">29,90 €</span></div>
+        <div class="t-row"><span class="t-label">Housse de couette</span><span class="t-price">13,90 €</span></div>
+        <div class="t-row"><span class="t-label">Couverture</span><span class="t-price">19,90 €</span></div>
+        <div class="t-row"><span class="t-label">Taie d'oreiller</span><span class="t-price">2,90 €</span></div>
+        <div class="t-row"><span class="t-label">Taie traversin</span><span class="t-price">3,90 €</span></div>
+        <div class="t-row"><span class="t-label">Alèse</span><span class="t-price">9,90 €</span></div>
+        <div class="t-row"><span class="t-label">Dessus de lit</span><span class="t-price">23,90 €</span></div>
+      </div>
+      <div class="t-col">
+        <div class="t-col-head">Table & Tapis</div>
+        <div class="t-row"><span class="t-label">Nappe</span><span class="t-price">12,90 – 24,90 €</span></div>
+        <div class="t-row"><span class="t-label">Serviette de table</span><span class="t-price">2,90 – 3,90 €</span></div>
+        <div class="t-special" style="flex-direction:column;align-items:flex-start;gap:4px;margin-top:1px;">
+          <span class="t-special-label">Tapis — nettoyage en profondeur</span>
+          <span class="t-special-price">18,90 € / m²</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-s">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-title">Une question sur<br>nos <em>tarifs</em> ?</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:0227341370" class="btn-gold">Nous appeler</a>
+        <a href="contact.html" class="btn-outline" style="border-color:rgba(255,255,255,0.3);color:var(--white);">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">CLEAN PRESTIGE</div>
+        <div class="footer-brand-slogan">Votre pressing, à votre porte</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <div class="footer-col">
+          <a href="index.html">Accueil</a>
+          <a href="particuliers.html">Particuliers</a>
+          <a href="entreprises.html">Entreprises</a>
+          <a href="tarifs.html">Tarifs</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div class="footer-contact-text">02 27 34 13 70</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">✉️</div><div class="footer-contact-text">contact@cleanprestige27.com</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><div class="footer-contact-text">1 Rue Fauville, 27000 Évreux</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Clean Prestige · Tous droits réservés</div>
+      <div class="footer-gold-line"></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
