@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1e33"/>
+      <stop offset="100%" stop-color="#0f2d4a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="100" r="300" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.08"/>
+  <circle cx="1050" cy="100" r="200" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.06"/>
+  <circle cx="150" cy="530" r="200" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.05"/>
+  <!-- Cintre icon -->
+  <path d="M600 160C600 160 520 215 495 245L705 245C680 215 600 160 600 160Z" stroke="#C9A84C" stroke-width="4" fill="none" stroke-linejoin="round"/>
+  <circle cx="600" cy="155" r="8" stroke="#C9A84C" stroke-width="3" fill="none"/>
+  <line x1="600" y1="147" x2="600" y2="138" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+  <!-- Gold line -->
+  <rect x="0" y="265" width="1200" height="2" fill="url(#gold)"/>
+  <!-- Brand name -->
+  <text x="600" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="white" letter-spacing="12">CLEAN PRESTIGE</text>
+  <!-- Subtitle -->
+  <text x="600" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#C9A84C" letter-spacing="6">PRESSING · ÉVREUX</text>
+  <!-- Gold line bottom -->
+  <rect x="400" y="415" width="400" height="1" fill="url(#gold)"/>
+  <!-- Slogan -->
+  <text x="600" y="465" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="rgba(255,255,255,0.5)" font-style="italic">Votre pressing, à votre porte</text>
+  <!-- Services -->
+  <text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.3)" letter-spacing="4">Nettoyage à sec · Repassage · Blanchisserie · Retouches · Livraison</text>
+</svg>
